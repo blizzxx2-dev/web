@@ -559,7 +559,7 @@ def press():
     <div class="wrap">
       <h1 id="press-title">Press kit</h1>
       <p>Facts, descriptions, key art and screenshots for the four TrevorGames games. All assets on this page may be used for coverage of the games.</p>
-      <p>Contact: message <a href="https://x.com/TrevorGamesHQ">@TrevorGamesHQ on X</a> or <a href="https://bsky.app/profile/trevorgameshq.bsky.social">on Bluesky</a>.</p>
+      <p>Press contact: <a href="mailto:blizzstorygames@gmail.com">blizzstorygames@gmail.com</a>. You can also message <a href="https://x.com/TrevorGamesHQ">@TrevorGamesHQ on X</a> or <a href="https://bsky.app/profile/trevorgameshq.bsky.social">on Bluesky</a>.</p>
       <ul class="jump" aria-label="Jump to a game">
       <li><a href="#factsheet">Factsheet</a></li>
 {jump}
@@ -584,7 +584,7 @@ def press():
           <ul class="inline-list">
 {socials}
           </ul></dd></div>
-        <div><dt>Contact</dt><dd>Message @TrevorGamesHQ on X or Bluesky.</dd></div>
+        <div><dt>Contact</dt><dd><a href="mailto:blizzstorygames@gmail.com">blizzstorygames@gmail.com</a></dd></div>
         <div><dt>Studio assets</dt><dd>
           <ul class="inline-list">
             <li><a href="{p}trevorgames/avatar_1080.png" download>TG monogram, 1080 × 1080 PNG</a></li>
