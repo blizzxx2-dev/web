@@ -23,7 +23,7 @@ class P(HTMLParser):
 parsed = {}
 for pg in PAGES:
     p = P(); p.feed(open(os.path.join(R, pg)).read()); parsed[pg] = p
-BASE = 'https://blizzxx2-dev.github.io/web/'
+BASE = 'https://trevorgameshq.com/'
 bad = []; n = 0; ext = set(); abs_internal = 0
 def target(pg, ref):
     base_dir = '' if pg == '404.html' else os.path.dirname(pg)

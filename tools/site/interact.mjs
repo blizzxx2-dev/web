@@ -2,14 +2,14 @@ import { createRequire } from 'module';
 const require = createRequire(import.meta.url);
 const { chromium } = require('/tmp/claude-0/-home-user-Ninefold/aced07b5-8bf6-5d5f-83ea-056e9f0c83cb/scratchpad/art/node_modules/playwright-core');
 import fs from 'fs'; import path from 'path';
-const ROOT = '/home/user/web', BASE = 'https://blizzxx2-dev.github.io/web/';
+const ROOT = '/home/user/web', BASE = 'https://trevorgameshq.com/';
 const OUT = '/tmp/claude-0/-home-user/aced07b5-8bf6-5d5f-83ea-056e9f0c83cb/scratchpad/site_shots';
 const T = { '.html': 'text/html', '.css': 'text/css', '.js': 'text/javascript', '.jpg': 'image/jpeg', '.png': 'image/png', '.woff2': 'font/woff2', '.ico': 'image/x-icon', '.mp4': 'video/mp4' };
 async function route(ctx, served) {
   await ctx.route('**/*', async (r) => {
     const u = new URL(r.request().url());
-    if (u.host === 'blizzxx2-dev.github.io') {
-      let rel = decodeURIComponent(u.pathname.slice(9)); let f = path.join(ROOT, rel);
+    if (u.host === 'trevorgameshq.com') {
+      let rel = decodeURIComponent(u.pathname.slice(1)); let f = path.join(ROOT, rel);
       if (rel === '' || rel.endsWith('/')) f = path.join(f, 'index.html');
       if (!fs.existsSync(f)) f = path.join(ROOT, '404.html');
       const body = fs.readFileSync(f); if (served) served.push([rel, body.length, r.request().resourceType()]);

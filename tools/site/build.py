@@ -6,7 +6,7 @@ import json, os, re, html, subprocess
 from about import about, G as STORE
 
 R = _ROOT
-BASE = 'https://blizzxx2-dev.github.io/web/'
+BASE = 'https://trevorgameshq.com/'
 TODAY = '2026-10-03'
 E = html.escape
 
@@ -659,8 +659,8 @@ def extras():
     urls = '\n'.join(f'  <url>\n    <loc>{BASE}{u}</loc>\n    <lastmod>{TODAY}</lastmod>\n  </url>' for u in pages)
     write('sitemap.xml', f'''<?xml version="1.0" encoding="UTF-8"?>
 <!--
-  Base URL for now: {BASE}
-  When the site moves to its own domain, replace that base everywhere it appears:
+  Base URL: {BASE}
+  If the domain changes, replace that base everywhere it appears:
   every <loc> below, the Sitemap line in robots.txt, the canonical, og:url, og:image
   and twitter:image tags in the <head> of each page, and the JSON-LD blocks.
   One search-and-replace across the repo does it. (404.html works out its own base.)
@@ -669,11 +669,8 @@ def extras():
 {urls}
 </urlset>
 ''')
-    write('robots.txt', f'''# TrevorGames website.
-# Crawlers only read robots.txt from the root of a host, so on
-# blizzxx2-dev.github.io this file (under /web/) is ignored.
-# It takes effect once the site is served from its own domain.
-# Change the Sitemap URL below at the same time (see sitemap.xml).
+    write('robots.txt', f'''# TrevorGames website, served at the root of trevorgameshq.com.
+# If the domain changes, change the Sitemap URL below at the same time (see sitemap.xml).
 User-agent: *
 Allow: /
 

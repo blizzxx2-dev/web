@@ -3,7 +3,7 @@ const require = createRequire(import.meta.url);
 const { chromium } = require('/tmp/claude-0/-home-user-Ninefold/aced07b5-8bf6-5d5f-83ea-056e9f0c83cb/scratchpad/art/node_modules/playwright-core');
 import fs from 'fs'; import path from 'path';
 const ROOT = '/home/user/web';
-const BASE = 'https://blizzxx2-dev.github.io/web/';
+const BASE = 'https://trevorgameshq.com/';
 const OUT = '/tmp/claude-0/-home-user/aced07b5-8bf6-5d5f-83ea-056e9f0c83cb/scratchpad/site_shots';
 const TYPES = { '.html': 'text/html; charset=utf-8', '.css': 'text/css', '.js': 'text/javascript', '.jpg': 'image/jpeg', '.png': 'image/png', '.woff2': 'font/woff2', '.ico': 'image/x-icon', '.mp4': 'video/mp4', '.xml': 'application/xml', '.txt': 'text/plain' };
 const pages = (process.env.PAGES || 'index:,engagement:games/engagement/,fight:games/fight/,street-takeover:games/street-takeover/,field-surgeon:games/field-surgeon/,press:press/,404:no/such/page/here').split(',').map(s => s.split(':'));
@@ -14,8 +14,8 @@ for (const sz of sizes) {
   const ctx = await browser.newContext({ viewport: { width: sz.w, height: sz.h }, deviceScaleFactor: sz.r, isMobile: sz.n.startsWith('mobile'), hasTouch: sz.n.startsWith('mobile') });
   await ctx.route('**/*', async (route) => {
     const url = new URL(route.request().url());
-    if (url.host === 'blizzxx2-dev.github.io' && url.pathname.startsWith('/web/')) {
-      let rel = decodeURIComponent(url.pathname.slice('/web/'.length));
+    if (url.host === 'trevorgameshq.com') {
+      let rel = decodeURIComponent(url.pathname.slice(1));
       let file = path.join(ROOT, rel);
       if (rel === '' || rel.endsWith('/')) file = path.join(file, 'index.html');
       let status = 200;

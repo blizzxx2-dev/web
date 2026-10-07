@@ -1,9 +1,6 @@
-# TrevorGames website.
-# Crawlers only read robots.txt from the root of a host, so on
-# blizzxx2-dev.github.io this file (under /web/) is ignored.
-# It takes effect once the site is served from its own domain.
-# Change the Sitemap URL below at the same time (see sitemap.xml).
+# TrevorGames website, served at the root of trevorgameshq.com.
+# If the domain changes, change the Sitemap URL below at the same time (see sitemap.xml).
 User-agent: *
 Allow: /
 
-Sitemap: https://blizzxx2-dev.github.io/web/sitemap.xml
+Sitemap: https://trevorgameshq.com/sitemap.xml
