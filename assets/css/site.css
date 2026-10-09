@@ -79,6 +79,10 @@
 .t-fight { --accent: #E51828; --accent-ink: #FFFFFF; --accent-text: #1C9DC1; }
 .t-street-takeover { --accent: #DD5A3B; --accent-ink: #0B0C0E; --accent-text: #46D9EB; }
 .t-field-surgeon { --accent: #ECB885; --accent-ink: #0B0C0E; --accent-text: #ECB885; }
+.t-mothership { --accent: #7FB6E0; --accent-ink: #0B0C0E; --accent-text: #A9D3F2; }
+.t-phantasm-catalyst { --accent: #D9B45A; --accent-ink: #0B0C0E; --accent-text: #E8C979; }
+.t-ace-academy { --accent: #E0384B; --accent-ink: #F3F2EE; --accent-text: #F27583; }
+.t-slinghook { --accent: #F08A2C; --accent-ink: #0B0C0E; --accent-text: #F6A85F; }
 
 /* ---------- Base ---------- */
 *, *::before, *::after { box-sizing: border-box; }
@@ -313,6 +317,9 @@ h1, h2, h3 { margin: 0; line-height: 1.15; }
 .t-fight .g-title { font-family: "Kanit", var(--display); font-style: italic; font-weight: 700; letter-spacing: 0.01em; font-size: clamp(3rem, 16vw, 8rem); line-height: 0.9; }
 .t-street-takeover .g-title { font-family: "Archivo", var(--display); font-style: italic; font-weight: 800; font-stretch: 125%; text-transform: uppercase; font-size: clamp(2rem, 9.4vw, 5.25rem); }
 .t-field-surgeon .g-title { font-family: "Cinzel", Georgia, serif; font-weight: 700; letter-spacing: 0.03em; font-size: clamp(2.2rem, 10.4vw, 5.5rem); line-height: 1.02; }
+.t-mothership .g-title { font-family: "Unbounded", var(--display); font-weight: 800; text-transform: uppercase; letter-spacing: 0.02em; font-size: clamp(1.9rem, 7.4vw, 4.4rem); line-height: 1.05; }
+.t-phantasm-catalyst .g-title, .t-ace-academy .g-title { font-family: "Cinzel", Georgia, serif; font-weight: 700; letter-spacing: 0.03em; font-size: clamp(2.2rem, 10.4vw, 5.5rem); line-height: 1.02; }
+.t-slinghook .g-title { font-family: "Kanit", var(--display); font-style: italic; font-weight: 700; text-transform: uppercase; letter-spacing: 0.01em; }
 .g-pitch { font-size: 1.0625rem; max-width: 60ch; color: var(--paper-dim); margin-bottom: 22px; }
 .g-hero .eyebrow { color: var(--accent-text, var(--steel)); }
 @media (min-width: 720px) {

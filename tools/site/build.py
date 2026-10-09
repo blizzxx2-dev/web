@@ -147,8 +147,90 @@ GAMES = {
    clips=['First, get his armour off', 'Open him up. Find the rot.', 'Surgery in a city at war'],
    wide_label='Gameplay: armour off, then the operating table (15 seconds)',
  ),
+
+ 'mothership': dict(
+   name='MOTHERSHIP: The Last Stand', store='https://store.steampowered.com/app/5375740/MOTHERSHIP_The_Last_Stand/', appid=5375740, demo=True,
+   eyebrow='Action · Strategy', fx='50%', shot_ar='16 / 9', rows=[2, 3],
+   card='Command the last fortress-station of the Compact. Aim its Prime Battery, build defenses under fire and break flagship after flagship across a war of 24 systems.',
+   pitch='Take command of Mothership Keystone, the last fortress-station of the Compact: aim its Prime Battery, build defenses under fire and break flagship after flagship across a war of 24 systems. Every run makes your Admiralty stronger.',
+   short='Take command of Mothership Keystone, the last fortress-station of the Compact: aim its Prime Battery, build defenses under fire and break flagship after flagship across a war of 24 systems. Every run makes your Admiralty stronger.',
+   meta='MOTHERSHIP: The Last Stand puts you in command of the last fortress-station of the Compact: aim the Prime Battery, build under fire and break flagships across 24 systems. Free demo on Steam.',
+   art_alt='MOTHERSHIP key art: a fortress-station under a hexagonal shield, firing on attacking ships',
+   press_paras=[0, 1, 2, 3, 4, 5],
+   font='unbounded-latin.woff2',
+   shots=[
+     "The station fires its battery into a burning asteroid inside an orange nebula",
+     "The war map: choosing between Caldera, Lindqvist and Halvard, with Caldera's Hold Out briefing open",
+     "Build mode: empty sockets glow around the station's ring, with the structure menu on the left",
+     "Wave 3 of 3: the Tyrant dreadnought under fire, with its health bar across the top",
+     "The station under its hexagonal shield above a ringed planet in a purple nebula",
+   ],
+   clips=[],
+ ),
+ 'phantasm-catalyst': dict(
+   name='Phantasm Catalyst', store='https://store.steampowered.com/app/5380940/Phantasm_Catalyst/', appid=5380940, demo=False,
+   eyebrow='Action · RPG · Strategy', fx='50%', shot_ar='16 / 9', rows=[3, 4],
+   card="A tactical anime roguelike deckbuilder. Read every foe's countdown and outplay them with a shared hand of skills across four broken realms.",
+   pitch="A tactical anime roguelike deckbuilder. Read every foe's countdown, outplay them with a shared hand of skills, and sail the Ark through four broken realms and the Rift to stop the hunger that eats time.",
+   short="A tactical anime roguelike deckbuilder. Read every foe's countdown, outplay them with a shared hand of skills, and sail the Ark through four broken realms and the Rift to stop the hunger that eats time.",
+   meta="Phantasm Catalyst is a tactical anime roguelike deckbuilder: read every foe's countdown and outplay them with a shared hand of skills. Wishlist on Steam.",
+   art_alt='Phantasm Catalyst key art: a line of anime heroes, each on a different coloured panel',
+   press_paras=[0, 1, 2, 3],
+   font='cinzel-700-latin.woff2',
+   shots=[
+     'Paper Cut: Tamsin Reed and a paper fox face a Lantern Moth and an Alley Gloam in a lantern-lit street',
+     'Kagami, the Mirror Sovereign, in the Silent Planetarium',
+     'An Apex cut-in, Ninefold Thunder Palm: "Nine strikes. You will feel the tenth tomorrow."',
+     'The campfire between battles, with actions to rest, train, enchant, meditate and talk',
+     'Silk Snare: Mirelle Ashgrove binds a Time Eater among floating clocks',
+     'Assemble your crew: sixteen hero portraits, with Kaito Hayame selected',
+     'A white-haired hero with a glowing spirit wolf behind him',
+   ],
+   clips=[],
+ ),
+ 'ace-academy': dict(
+   name='Ace Academy', store='https://store.steampowered.com/app/5386160/Ace_Academy/', appid=5386160, demo=False,
+   eyebrow='Simulation', fx='62%', shot_ar='16 / 9', rows=[3, 4],
+   card='Gamble, read faces and catch cheats in the act at an academy where rank is won at the table. Seven chapters of high-stakes anime drama.',
+   pitch='At Ace Academy, rank is won at the table and every debt is written in the Ledger. Gamble, read faces, raise the stakes, catch cheats in the act and cheat back if you dare. Climb a ladder of academy rivals through seven chapters of high-stakes anime drama, or end up expelled.',
+   short='At Ace Academy, rank is won at the table and every debt is written in the Ledger. Gamble, read faces, raise the stakes, catch cheats in the act and cheat back if you dare. Climb a ladder of academy rivals through seven chapters of high-stakes anime drama, or end up expelled.',
+   meta='Ace Academy: gamble, read faces and catch cheats in a seven-chapter anime story where rank is won at the table. Wishlist on Steam.',
+   art_alt='Ace Academy key art: a student in a black blazer holds a fan of cards in a red-lit card room',
+   press_paras=[0, 2, 3, 4, 6, 7],
+   font='cinzel-700-latin.woff2',
+   shots=[
+     'All in: Tsukasa, eyes lit with spades, pushes every chip in a game of Blind Card',
+     'A king of spades beats a nine of hearts: Tsukasa takes 860 from Kaname',
+     'In the Observatory, Ouka raises a card: "Tsukasa Kurenai. You walked through my academy like a fire through paper."',
+     'A game of Twenty-One Duel against Mitsuru Saijiki of the Stage Magic Society',
+     'Tsukasa and Kaname face off over a face-down card',
+     'Tomoki explains the Kasanouras and the House in an empty classroom at sunset',
+     'Knife and Ribbon against Shigure Okami: nine cards cut into two piles',
+   ],
+   clips=[],
+ ),
+ 'slinghook': dict(
+   name='SLINGHOOK', store='https://store.steampowered.com/app/5377860/SLINGHOOK/', appid=5377860, demo=False,
+   eyebrow='Adventure', fx='80%', shot_ar='16 / 9', rows=[2, 3],
+   card='Tap to yank yourself toward any hook point, hold to swing, and chain it all without touching the ground. No enemies, no combat, just speed.',
+   pitch='Fire your slinghook and fly. Tap to yank yourself toward any hook point, hold to swing, and chain it all without touching the ground. Race through eight landscapes as fast as you can. No enemies, no combat, just speed.',
+   short='Fire your slinghook and fly. Tap to yank yourself toward any hook point, hold to swing, and chain it all without touching the ground. Race through eight photoreal landscapes as fast as you can. No enemies, no combat, just speed.',
+   meta='SLINGHOOK is a grappling-hook game about speed: yank, swing and chain hooks through eight landscapes without touching the ground. Wishlist on Steam.',
+   art_alt='SLINGHOOK key art: a figure swings on a rope across a starry night sky above stone spires',
+   press_paras=[0, 1, 2],
+   font='kanit-700italic-latin.woff2',
+   shots=[
+     'Swinging on a rope over stone pillars that rise from green islands and water',
+     'Hanging from a rope among tall red sandstone spires',
+     'Flying past a floating island above pink blossom trees',
+     'Swinging below a stone arch among ruined columns',
+     'Swinging between ice crystals and pine trees in the snow',
+   ],
+   clips=[],
+ ),
 }
-ORDER = ['engagement', 'fight', 'street-takeover', 'field-surgeon']
+ORDER = ['engagement', 'fight', 'street-takeover', 'field-surgeon', 'mothership', 'phantasm-catalyst', 'ace-academy', 'slinghook']
+DEMOS = [g for g in ORDER if GAMES[g].get('demo', True)]
 for gid in ORDER:
     s = STORE[gid]
     GAMES[gid]['genres'] = s['genres']
@@ -234,7 +316,7 @@ def follow():
     return f'''<section id="follow" class="section follow" aria-labelledby="follow-title">
   <div class="wrap">
     <h2 id="follow-title" class="section-title">Follow</h2>
-    <p class="section-lede">Clips from all four games, posted as @TrevorGamesHQ.</p>
+    <p class="section-lede">Clips from the games, posted as @TrevorGamesHQ.</p>
     <ul class="follow-list">
 {items}
     </ul>
@@ -271,7 +353,7 @@ def home():
     ld = {
         '@context': 'https://schema.org', '@type': 'Organization', 'name': 'TrevorGames', 'url': BASE,
         'logo': BASE + 'trevorgames/avatar_400.png',
-        'description': 'TrevorGames is Trevor, a solo game developer. Four games on Steam: Engagement, FIGHT, Street Takeover and Field Surgeon.',
+        'description': 'TrevorGames is Trevor, a solo game developer with eight games on Steam: ' + ', '.join(GAMES[g]['name'] for g in ORDER[:-1]) + ' and ' + GAMES[ORDER[-1]]['name'] + '.',
         'founder': {'@type': 'Person', 'name': 'Trevor'},
         'sameAs': [s[2] for s in SOCIALS] + ['https://store.steampowered.com/search/?developer=Trevor'],
     }
@@ -287,14 +369,15 @@ def home():
           <h3 class="card-title"><a href="games/{gid}/">{g['name']}</a></h3>
           <p class="card-pitch">{E(g['card'])}</p>
           <div class="actions">
-            <a class="btn btn-primary" href="{steam(gid, 'home')}">Free demo on Steam</a>
+            <a class="btn btn-primary" href="{steam(gid, 'home')}">{'Free demo on Steam' if g.get('demo', True) else 'Wishlist on Steam'}</a>
             <a class="btn btn-ghost" href="games/{gid}/" aria-label="{g['name']} details">Details</a>
           </div>
         </div>
       </article>''')
-    body = f'''{head(p, title='TrevorGames · One developer. Four games.', ogtitle='TrevorGames: one developer, four games',
-        desc='TrevorGames is Trevor, a solo developer. Engagement, FIGHT, Street Takeover and Field Surgeon are on Steam, and each one has a free demo.',
-        path='', og='home', og_alt='TrevorGames: key art from Engagement, FIGHT, Street Takeover and Field Surgeon above the wordmark', ld=ld)}
+    demo_names = ', '.join(GAMES[g]['name'].split(':')[0] for g in DEMOS[:-1]) + ' and ' + GAMES[DEMOS[-1]]['name'].split(':')[0]
+    body = f'''{head(p, title='TrevorGames · One developer. Eight games.', ogtitle='TrevorGames: one developer, eight games',
+        desc=f'TrevorGames is Trevor, a solo developer making eight games for Steam. {demo_names} have free demos.',
+        path='', og='home', og_alt='TrevorGames: key art from all eight games above the wordmark', ld=ld)}
 <body class="page-home">
 {header(p, './', home=True)}
 <main id="main">
@@ -302,10 +385,10 @@ def home():
     <div class="wrap">
       <div class="hero-copy">
         <h1 id="site-title" class="wordmark wordmark-xl">Trevor<span class="g">Games</span></h1>
-        <p class="tagline"><span>One developer.</span> <span>Four games.</span></p>
-        <p class="intro">I'm Trevor, and I make games on my own. Four of them have free demos on Steam.</p>
+        <p class="tagline"><span>One developer.</span> <span>Eight games.</span></p>
+        <p class="intro">I'm Trevor, and I make games on my own. Five of them have free demos on Steam.</p>
         <div class="actions">
-          <a class="btn btn-primary" href="#games">See the four games</a>
+          <a class="btn btn-primary" href="#games">See the games</a>
           <a class="btn btn-ghost" href="{devpage('home')}">All on Steam</a>
         </div>
       </div>
@@ -381,7 +464,25 @@ def game(gid):
             </figure>
           </li>''')
     shot_ar = g['shot_ar']
-    body = f'''{head(p, title=f"{g['name']} · Free demo on Steam · TrevorGames", ogtitle=f"{g['name']}: free demo on Steam",
+    clips_section = (f"""  <section class="section wrap" aria-labelledby="clips-title" style="padding-top:0">
+    <h2 id="clips-title" class="section-title">Clips</h2>
+    <div class="clips">
+      <figure class="clip-wide">
+        <div class="player" data-label="Play {E(g['name'])} gameplay clip">
+          <video controls playsinline preload="none" poster="{p}assets/img/{gid}/wide-poster.jpg" width="1920" height="1080" src="{p}{gid}/{gid}_wide.mp4" aria-label="{E(g['name'])} gameplay clip"></video>
+        </div>
+        <figcaption>{E(g['wide_label'])}</figcaption>
+      </figure>
+      <ul class="clip-row">
+{chr(10).join(clips)}
+      </ul>
+    </div>
+  </section>
+
+""" if g['clips'] else '')
+    demo = g.get('demo', True)
+    cta = 'Free demo on Steam' if demo else 'Wishlist on Steam'
+    body = f'''{head(p, title=f"{g['name']} · {cta} · TrevorGames", ogtitle=f"{g['name']}: {cta[0].lower() + cta[1:]}",
         desc=g['meta'], path=path, og=gid, og_alt=f"{g['name']}: {g['art_alt'].split(': ',1)[1]}", ld=ld, extra_font=g['font'])}
 <body class="page-game t-{gid}">
 {header(p, p)}
@@ -396,8 +497,8 @@ def game(gid):
       <h1 id="game-title" class="g-title">{g['name']}</h1>
       <p class="g-pitch">{E(g['pitch'])}</p>
       <div class="actions">
-        <a class="btn btn-primary" href="{steam(gid, 'game')}">Free demo on Steam</a>
-        <a class="btn btn-ghost" href="{steam(gid, 'game')}">Wishlist on Steam</a>
+        <a class="btn btn-primary" href="{steam(gid, 'game')}">{cta}</a>{'' if not demo else f"""
+        <a class="btn btn-ghost" href="{steam(gid, 'game')}">Wishlist on Steam</a>"""}
       </div>
     </div>
   </section>
@@ -416,7 +517,7 @@ def game(gid):
           <dt>Developer</dt><dd>Trevor (solo)</dd>
           <dt>Studio</dt><dd>TrevorGames</dd>
           <dt>Platform</dt><dd>PC, on Steam</dd>
-          <dt>Demo</dt><dd>Free on Steam</dd>
+          <dt>Demo</dt><dd>{'Free on Steam' if demo else 'Not yet'}</dd>
         </dl>
         <h2 class="side-title">Genres</h2>
         <ul class="tags">
@@ -437,23 +538,9 @@ def game(gid):
     </ul>
   </section>
 
-  <section class="section wrap" aria-labelledby="clips-title" style="padding-top:0">
-    <h2 id="clips-title" class="section-title">Clips</h2>
-    <div class="clips">
-      <figure class="clip-wide">
-        <div class="player" data-label="Play {E(g['name'])} gameplay clip">
-          <video controls playsinline preload="none" poster="{p}assets/img/{gid}/wide-poster.jpg" width="1920" height="1080" src="{p}{gid}/{gid}_wide.mp4" aria-label="{E(g['name'])} gameplay clip"></video>
-        </div>
-        <figcaption>{E(g['wide_label'])}</figcaption>
-      </figure>
-      <ul class="clip-row">
-{chr(10).join(clips)}
-      </ul>
-    </div>
-  </section>
-
+{clips_section}
   <nav class="wrap page-links" aria-label="More">
-    <a class="btn btn-ghost" href="{p}">All four games</a>
+    <a class="btn btn-ghost" href="{p}#games">All games</a>
     <a class="btn btn-ghost" href="{p}press/#{gid}">Press kit for {g['name']}</a>
   </nav>
 
@@ -550,17 +637,18 @@ def press():
     socials = '\n'.join(f'            <li><a href="{u}" rel="me">{n} {h}</a></li>' for n, h, u, _ in SOCIALS)
     games_list = '\n'.join(f'            <li><a href="#{gid}">{GAMES[gid]["name"]}</a></li>' for gid in ORDER)
     trailer = f'{R}/trevorgames/trevorgames_trailer.mp4'
+    demo_names = ', '.join(GAMES[g]['name'] for g in DEMOS[:-1]) + ' and ' + GAMES[DEMOS[-1]]['name']
     jump = '\n'.join(f'      <li><a href="#{gid}">{GAMES[gid]["name"]}</a></li>' for gid in ORDER)
     body = f'''{head(p, title='Press kit · TrevorGames', ogtitle='TrevorGames press kit',
-        desc='Press kit for TrevorGames: factsheet, descriptions, key art, logos and full-size screenshots for Engagement, FIGHT, Street Takeover and Field Surgeon.',
-        path='press/', og='press', og_alt='TrevorGames press kit: key art from all four games above the wordmark')}
+        desc='Press kit for TrevorGames: factsheet, descriptions, key art and full-size screenshots for all eight games.',
+        path='press/', og='press', og_alt='TrevorGames press kit: key art from all eight games above the wordmark')}
 <body class="page-press">
 {header(p, p, current='press')}
 <main id="main">
   <section class="press-head" aria-labelledby="press-title">
     <div class="wrap">
       <h1 id="press-title">Press kit</h1>
-      <p>Facts, descriptions, key art and screenshots for the four TrevorGames games. All assets on this page may be used for coverage of the games.</p>
+      <p>Facts, descriptions, key art and screenshots for every TrevorGames game. All assets on this page may be used for coverage of the games.</p>
       <p>Press contact: <a href="mailto:blizzstorygames@gmail.com">blizzstorygames@gmail.com</a>. You can also message <a href="https://x.com/TrevorGamesHQ">@TrevorGamesHQ on X</a> or <a href="https://bsky.app/profile/trevorgameshq.bsky.social">on Bluesky</a>.</p>
       <ul class="jump" aria-label="Jump to a game">
       <li><a href="#factsheet">Factsheet</a></li>
@@ -580,7 +668,7 @@ def press():
           <ul class="inline-list">
 {games_list}
           </ul>
-          Each one has a free demo on Steam.</dd></div>
+          Free demos on Steam: {demo_names}.</dd></div>
         <div><dt>Steam developer page</dt><dd><a href="{devpage('press')}">store.steampowered.com/search/?developer=Trevor</a></dd></div>
         <div><dt>Socials</dt><dd>
           <ul class="inline-list">
@@ -629,8 +717,8 @@ def notfound():
             '})();',
             '</script>']
     games = '\n'.join(f'        <li><a class="btn btn-ghost" href="games/{gid}/">{GAMES[gid]["name"]}</a></li>' for gid in ORDER)
-    body = f'''{head(p, title='Page not found · TrevorGames', desc='This page does not exist. Engagement, FIGHT, Street Takeover and Field Surgeon are on the TrevorGames home page.',
-        path='404.html', og='home', og_alt='TrevorGames: key art from Engagement, FIGHT, Street Takeover and Field Surgeon above the wordmark', base=base, noindex=True, assets=False)}
+    body = f'''{head(p, title='Page not found · TrevorGames', desc='This page does not exist. All eight TrevorGames games are on the home page.',
+        path='404.html', og='home', og_alt='TrevorGames: key art from all eight games above the wordmark', base=base, noindex=True, assets=False)}
 <body class="page-404">
 {header(p, './')}
 <main id="main">
@@ -655,7 +743,7 @@ def notfound():
 
 # ---------------------------------------------------------------- robots, sitemap
 def extras():
-    pages = ['', 'games/engagement/', 'games/fight/', 'games/street-takeover/', 'games/field-surgeon/', 'press/']
+    pages = [''] + [f'games/{g}/' for g in ORDER] + ['press/']
     urls = '\n'.join(f'  <url>\n    <loc>{BASE}{u}</loc>\n    <lastmod>{TODAY}</lastmod>\n  </url>' for u in pages)
     write('sitemap.xml', f'''<?xml version="1.0" encoding="UTF-8"?>
 <!--

@@ -1,10 +1,10 @@
 // usage: node render.mjs jobs.json   jobs: [{html, out, w, h}]
 import { createRequire } from 'module';
 const require = createRequire(import.meta.url);
-const { chromium } = require('/tmp/claude-0/-home-user-Ninefold/aced07b5-8bf6-5d5f-83ea-056e9f0c83cb/scratchpad/art/node_modules/playwright-core');
+const { chromium } = require(process.env.PLAYWRIGHT_MODULE || '/opt/node-tools/node_modules/playwright');
 import fs from 'fs';
 const jobs = JSON.parse(fs.readFileSync(process.argv[2], 'utf8'));
-const browser = await chromium.launch({ executablePath: '/opt/pw-browsers/chromium-1194/chrome-linux/chrome' });
+const browser = await chromium.launch(process.env.CHROMIUM_PATH ? { executablePath: process.env.CHROMIUM_PATH } : {});
 const page = await browser.newPage({ viewport: { width: 1200, height: 630 }, deviceScaleFactor: 1 });
 for (const j of jobs) {
   await page.setViewportSize({ width: j.w, height: j.h });

@@ -2,7 +2,7 @@ import os as _os
 _ROOT = _os.path.abspath(_os.path.join(_os.path.dirname(__file__), '..', '..'))
 import json, re
 STEAM=json.load(open(_os.path.join(_os.path.dirname(__file__), 'data', 'steam_games.json')))
-G={g['id']:g for g in STEAM[:4]}
+G={g['id']:g for g in STEAM if g.get('appid')}
 
 def clean(h):
     h = re.sub(r'<span class="bb_img_ctn">.*?</span>', '', h, flags=re.S)
@@ -41,6 +41,30 @@ FIXES = {
    ('<li>Photo Mode</li>', '<li>Photo mode</li>'),
    ('<li>Driving School</li>', '<li>Driving school</li>'),
  ],
+ 'mothership': [
+   ('<h3>THE STATION IS THE WEAPON</h3>', '<h3>The station is the weapon</h3>'),
+   ('<h3>BUILD UNDER FIRE</h3>', '<h3>Build under fire</h3>'),
+   ('<h3>BREAK THEM PIECE BY PIECE</h3>', '<h3>Break them piece by piece</h3>'),
+   ('<h3>HOLD THE REACH</h3>', '<h3>Hold the Reach</h3>'),
+   ('<h3>THE ADMIRALTY REMEMBERS</h3>', '<h3>The Admiralty remembers</h3>'),
+   ('<h3>FEATURES</h3>', '<h3>Features</h3>'),
+ ],
+ 'slinghook': [
+   ('<p><strong>Eight landscapes to fly through</strong></p>', '<h3>Eight landscapes to fly through</h3>'),
+   ('<p><strong>Ways to play</strong></p>', '<h3>Ways to play</h3>'),
+   ('<p><strong>And more</strong></p>', '<h3>And more</h3>'),
+   ('<p><strong>Built for everyone</strong></p>', '<h3>Built for everyone</h3>'),
+ ],
+ 'phantasm-catalyst': [
+   ('<p><strong>Features</strong></p>', '<h3>Features</h3>'),
+ ],
+ 'ace-academy': [
+   ('<h3>Read The Table</h3>', '<h3>Read the table</h3>'),
+   ('<h3>Catch Them Cheating</h3>', '<h3>Catch them cheating</h3>'),
+   ('<h3>Cheat Back</h3>', '<h3>Cheat back</h3>'),
+   ('<h3>Fourteen Ways to Gamble, Twenty Rivals</h3>', '<h3>Fourteen ways to gamble, twenty rivals</h3>'),
+   ('<h3>Your Choices, Your Ending</h3>', '<h3>Your choices, your ending</h3>'),
+ ],
  'field-surgeon': [
    ('<h3>Surgery the way it was done as a Sawdoctor.</h3>', '<h3>Surgery the way a sawdoctor did it.</h3>'),
    ("<h3>Every patient comes from a different culture with it's own</h3>", '<h3>Every patient comes from a different culture, with its own anatomy.</h3>'),
@@ -50,7 +74,7 @@ FIXES = {
 }
 def about(gid):
     h = clean(G[gid]['about_html'])
-    for a,b in FIXES[gid]:
+    for a,b in FIXES.get(gid, []):
         assert a in h, (gid, a)
         h = h.replace(a,b)
     return h

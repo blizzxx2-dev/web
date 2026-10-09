@@ -4,7 +4,7 @@ import json, os, subprocess, re
 R=_ROOT
 d=json.load(open(_os.path.join(_os.path.dirname(__file__), 'data', 'steam_games.json')))
 keys={'library_hero_2x':'key_art','header_2x':'header','main_capsule_2x':'main_capsule','library_capsule_2x':'library_capsule','hero_capsule_2x':'hero_capsule'}
-for g in d[:4]:
+for g in [x for x in d if x.get("appid")]:
     gid=g['id']; out=f'{R}/assets/press/{gid}'; os.makedirs(out,exist_ok=True)
     jobs=[]
     for k,name in keys.items():
