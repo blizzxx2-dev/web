@@ -28,7 +28,8 @@ Then, with the Artifact tools:
    of the dashboard (one call each).
 2. `python3 dashboard/docs.py $D/docs standing=/_blob/<id> history=/_blob/<id> ahead=/_blob/<id>`
    and write the three files to `datasets/<id>` in one batch.
-3. Delete the three assets the datasets pointed at before.
+3. Leave the old assets alone for a day (an open dashboard tab may still be
+   reading them), then delete the ones no dataset points at.
 
 If `history.jsonl` is lost, download the dashboard's `history.csv` and run
 `python3 build_data.py --dir $D --restore history.csv`.
@@ -36,3 +37,28 @@ If `history.jsonl` is lost, download the dashboard's `history.csv` and run
 Wishlist numbers come from Trevor (Steamworks is private): add a row to
 `wishlists.csv` and upload it the same way. Coverage: run `coverage.py`, look
 at anything it prints as NEW before clearing its `new` flag in `known.json`.
+
+## Launch-day emails (Thursday Nov 12, about 10am US Eastern)
+
+`launch_queue.py` builds the "it's out, your key works" queue. Nothing is sent
+by the script; Claude sends from the queue file with the Gmail tools.
+
+Rules Trevor set: 40 emails an hour at most, no dashes, no website link, no
+other games named, true claims only, nothing to Steam curators.
+
+1. Do not send on the clock. First confirm Steam shows the game as released:
+   `python3 -c "import steamwatch; print(steamwatch.app_state())"` must show
+   `coming_soon: False`. Note `discount`: the 20% line goes in only if it is 20.
+2. Fresh inputs, all into a scratch dir (never the repo, the queue holds keys):
+   export the tracker's `contacts` collection (ArtifactData list with
+   `out_dir`), and get document `launch/plan` from the same database (greeting
+   names, the hand-written notes for people who replied or covered, skips).
+3. `python3 launch_queue.py --contacts <dir>/contacts --plan <dir>/launch/plan.json
+   --out <dir>/queue.json --wishlists <true number, e.g. 9,000> [--discount]`
+4. Check the inbox for new replies from the people with personal notes, and
+   for anyone who asked to stop, before the first batch.
+5. Send `day` 1, `batch` 1 first (personal notes go inside their old thread via
+   `thread`; everyone else gets a new email with the queue's `subject`). One
+   batch an hour. Day 2 batches go out the next morning.
+6. After each batch: check for bounces (`from:mailer-daemon newer_than:1d`) and
+   mark the batch in the tracker (`launchSentAt` on each contact).
