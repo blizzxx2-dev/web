@@ -17,6 +17,7 @@ The plan file is private and lives in the outreach tracker's database, not in
 this repo (collection "launch", document "plan"). It holds:
   greets    {contact id: name to greet}
   skip      [contact ids to leave out]
+  wishlists the figure for "launched with over N wishlists", as Trevor gave it
   personal  {contact id: {greet, body, subject?, thread?, to?}} hand-written
             notes for people who replied or covered. In a body, {KEY} is the
             contact's key, {STORE} the store link, and {DISC} the launch
@@ -82,7 +83,7 @@ def main():
     ap.add_argument("--contacts", required=True)
     ap.add_argument("--out", required=True)
     ap.add_argument("--plan")
-    ap.add_argument("--wishlists", default="")
+    ap.add_argument("--wishlists", help="overrides the plan's wishlists value")
     ap.add_argument("--discount", action="store_true")
     ap.add_argument("--per-hour", type=int, default=40)
     a = ap.parse_args()
@@ -90,6 +91,7 @@ def main():
     plan = plan.get("data", plan)
     greets, personal, skip = plan.get("greets", {}), plan.get("personal", {}), SKIP | set(plan.get("skip", []))
     disc = " It's 20% off for launch week." if a.discount else ""
+    wishlists = a.wishlists if a.wishlists is not None else plan.get("wishlists", "")
 
     rows, problems = [], []
     for f in glob.glob(os.path.join(a.contacts, "*.json")):
@@ -139,7 +141,7 @@ def main():
             assert "{" not in r["body"] and "\u2014" not in r["body"] and "\u2013" not in r["body"], r["id"]
             continue
         r["subject"] = "Engagement is out today on Steam (your key inside)" if r["day"] == 1 else "Engagement is out now on Steam (your key inside)"
-        r["body"] = body(r["greet"], r["key"], r["early"], r["day"], a.wishlists, a.discount)
+        r["body"] = body(r["greet"], r["key"], r["early"], r["day"], wishlists, a.discount)
         assert "\u2014" not in r["body"] and "\u2013" not in r["body"]
 
     json.dump(out, open(a.out, "w"), indent=1, ensure_ascii=False)

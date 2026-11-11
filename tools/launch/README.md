@@ -54,7 +54,8 @@ other games named, true claims only, nothing to Steam curators.
    `out_dir`), and get document `launch/plan` from the same database (greeting
    names, the hand-written notes for people who replied or covered, skips).
 3. `python3 launch_queue.py --contacts <dir>/contacts --plan <dir>/launch/plan.json
-   --out <dir>/queue.json --wishlists <true number, e.g. 9,000> [--discount]`
+   --out <dir>/queue.json [--discount]` (the wishlist figure comes from the
+   plan; Trevor set it to "10,000" on Nov 11. `--wishlists` overrides it.)
 4. Check the inbox for new replies from the people with personal notes, and
    for anyone who asked to stop, before the first batch.
 5. Send `day` 1, `batch` 1 first (personal notes go inside their old thread via
