@@ -17,7 +17,8 @@ The plan file is private and lives in the outreach tracker's database, not in
 this repo (collection "launch", document "plan"). It holds:
   greets    {contact id: name to greet}
   skip      [contact ids to leave out]
-  wishlists the figure for "launched with over N wishlists", as Trevor gave it
+  wishlists the figure for "wishlisted over N times": Steamworks' lifetime
+            wishlist additions, rounded down, as Trevor gave it
   personal  {contact id: {greet, body, subject?, thread?, to?}} hand-written
             notes for people who replied or covered. In a body, {KEY} is the
             contact's key, {STORE} the store link, and {DISC} the launch
@@ -63,7 +64,7 @@ def body(greet, key, early, day, wishlists, discount):
                else f"Your key from my earlier email unlocks the full game now: {key}")
     facts = "You can play it solo or in co-op with friends."
     if wishlists:
-        facts += f" It launched with over {wishlists} wishlists" + (", and it's 20% off for launch week." if discount else ".")
+        facts += f" It has been wishlisted over {wishlists} times" + (", and it's 20% off for launch week." if discount else ".")
     elif discount:
         facts += " It's 20% off for launch week."
     return "\n".join([
