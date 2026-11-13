@@ -17,6 +17,8 @@ The plan file is private and lives in the outreach tracker's database, not in
 this repo (collection "launch", document "plan"). It holds:
   greets    {contact id: name to greet}
   skip      [contact ids to leave out]
+  reach     {contact id: audience size} for big channels whose notes carry no
+            number, so they are not sorted in with the small ones
   wishlists the figure for "wishlisted over N times": Steamworks' lifetime
             wishlist additions, rounded down, as Trevor gave it
   personal  {contact id: {greet, body, subject?, thread?, to?}} hand-written
@@ -40,12 +42,14 @@ EMAIL_RE = re.compile(r"^[^@\s,]+@[^@\s,]+\.[^@\s,]+$")
 
 def reach(notes):
     """Biggest audience number in the first part of the notes (subs, followers or views)."""
-    best = 0
-    for num, unit in re.findall(r"([\d.]+)\s*([KM])\b", (notes or "")[:220]):
+    head, best = (notes or "")[:220], 0
+    for num, unit in re.findall(r"([\d.]+)\s*([KM])\b", head):
         try:
             best = max(best, float(num) * (1e6 if unit == "M" else 1e3))
         except ValueError:
             pass
+    for num in re.findall(r"\b\d{1,3}(?:,\d{3})+\b", head):  # written out, as in "781,221 followers"
+        best = max(best, float(num.replace(",", "")))
     return int(best)
 
 
@@ -109,7 +113,7 @@ def main():
             problems.append((cid, c.get("email")))
             continue
         warm = c.get("status") in ("replied", "covered")
-        r = reach(c.get("notes"))
+        r = plan.get("reach", {}).get(cid) or reach(c.get("notes"))
         if c.get("kind") == "press" and r < 10_000:
             r = 99_999  # press goes out on launch day, right after the biggest channels
         tier = 0 if warm else 1 if r >= 100_000 else 2 if r >= 10_000 else 3

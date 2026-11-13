@@ -63,3 +63,23 @@ other games named, true claims only, nothing to Steam curators.
    batch an hour. Day 2 batches go out the next morning.
 6. After each batch: check for bounces (`from:mailer-daemon newer_than:1d`) and
    mark the batch in the tracker (`launchSentAt` on each contact).
+
+## Follow-up to the launch email
+
+`followup_queue.py` builds the list of people who got the launch email and have
+not written back or covered the game. Same rules as above, and again nothing is
+sent by the script.
+
+1. Fresh inputs into a scratch dir: the contacts export, the launch queue that
+   was sent from, `launch/plan`, a `threads.json` of `{address: Gmail thread id
+   of the launch email}` and a `replied.json` list of addresses that wrote back
+   (Gmail search `subject:Engagement -from:me -from:mailer-daemon newer_than:3d`;
+   leave out-of-office auto-replies off the list).
+2. `python3 followup_queue.py --queue <dir>/queue.json --contacts <dir>/contacts
+   --threads <dir>/threads.json --replied <dir>/replied.json --plan <dir>/plan.json
+   --out <dir>/followup.json`. It prints who was left out and why.
+3. Keep a copy of the output in the tracker database as `launch/followup`, so
+   the sends survive a lost scratch dir.
+4. Per batch: run the reply search again and drop anyone who has written since,
+   read the review line off `steamwatch.app_state()` for `{REVIEWS}`, send each
+   row as a reply in its `thread`, then set `launchFollowAt` on each contact.
